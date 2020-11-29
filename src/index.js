@@ -9,7 +9,7 @@ import bookmarks from './bookmarks';
 
 
 const main = function () {
-  //bookmarks.bindEventListeners();
+  bookmarks.bindEventListeners();
   bookmarks.render();
 };
 

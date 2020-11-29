@@ -16,7 +16,7 @@ header {
   font-size: 22px;
 }
 
-#js-container {
+.js-container {
   text-align: center;
   display: flex;
   flex-direction: column;
