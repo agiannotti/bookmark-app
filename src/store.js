@@ -12,7 +12,7 @@ const findById = function (id) {
   return this.items.find(currentItem => currentItem.id === id);
 };
 
-const addItem = function (item) {
+const addBookmark = function (item) {
   this.items.push(item);
 };
 
@@ -38,7 +38,7 @@ export default {
   error,
   hideCheckeditems,
   findById,
-  addItem,
+  addBookmark,
   findAndDelete,
   toggleCheckedFilter,
   findAndUpdate,
