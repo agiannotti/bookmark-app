@@ -1,5 +1,3 @@
-import bookmarks from './bookmarks';
-
 const BASE_URL = 'https://thinkful-list-api.herokuapp.com/anthonygiannotti';
 /**
  * listApiFetch - Wrapper function for native `fetch` to standardize error handling. 
@@ -48,14 +46,13 @@ const getItems = function () {
   return listApiFetch(`${BASE_URL}/items`);
 };
 
-const createItem = function (name) {
-  //const newItem = JSON.stringify({ name });
+const createItem = function (bookmark) {
   return listApiFetch(`${BASE_URL}/bookmarks`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: bookmarks
+    body: bookmark
   });
 };
 

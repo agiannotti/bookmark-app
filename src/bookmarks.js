@@ -12,16 +12,29 @@ $.fn.extend({
   }
 });
 
-function generateMainPage() {
+/*
+function generateAddBookmark() {
+  return `<h2>Bookmark App</h2>
+  <button class="add-bookmark" type='submit'>Add Bookmark</button>
+  </form>
+  `;
+}
+*/
+
+function generateBookmarkData() {
   return `
   <div class="js-container">
   <h2>Bookmark App</h2>
   <form id="bookmark-entry-form">
-  <label for="add-bookmark">Bookmark Title</label>
-  <input type="text" name="title" class="js-bookmark-title">
+  <label for="js-title">Title</label>
+  <input type="text" name="title" id="js-title" class="" required>
   <br>
-  <label for="add-bookmark">Bookmark Description</label>
-  <input type="text" name="desc" class="js-bookmark-desc">
+  <label for="js-url">URL</label>
+  <input type="text" name="url" id="js-url" class="" required>
+  <label for="js-desc">Description</label>
+  <input type="text" name="desc" id="js-desc" class="" required>
+  <label for="js-rating">Rating</label>
+  <input type="text" name="rating" id="js-rating" class="" required>
   <button class="add-bookmark" type='submit'>Add Bookmark</button>
   </form>
   </div>
@@ -44,7 +57,7 @@ const generateError = function (message) {
 };
 
 const render = function () {
-  let html = generateMainPage();
+  let html = generateBookmarkData();
   $('main').html(html);
 };
 
@@ -60,7 +73,7 @@ const renderError = function () {
 function handleNewItemSubmit() {
   $('main').on('submit', '#bookmark-entry-form', event => {
     event.preventDefault();
-    console.log(event.target);
+    //console.log(event.target);
     console.log($(event.target).serializeJson());
     let bookmark =$(event.target).serializeJson();
     
