@@ -6,17 +6,13 @@ body {
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   font-family: 'Tenor Sans', sans-serif;
   font-size: 18px;
 }
 
-header {
-  justify-content: center;
-  text-align: center;
-  font-size: 22px;
-}
 
-.js-container {
+main {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -26,22 +22,40 @@ header {
   border-radius: 20px;
 }
 
+
 button {
   padding: 25px;
-  margin-top: 32px;
+  margin-bottom: 23px;
+  margin-top: 10px;
   border-radius: 10px;
   border: 1px solid #B0A8B3;
   background-color: #F7F7F7;
 }
 
-@media all and (min-width: 800px) {
+
+
+@media all and (min-width: 450px) {
   body {
-    width: 45%;
     display: flex;
     flex-direction: column;
   }
   main {
+    margin: auto;
+    width: 75%;
     padding: 50px;
+    width: 45%;
   }
+
+  #bookmark-entry-form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: auto;
+  }
+
+  button {
+    margin-top: 24px;
+  }
+  
 }
 

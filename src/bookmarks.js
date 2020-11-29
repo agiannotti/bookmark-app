@@ -12,14 +12,24 @@ $.fn.extend({
   }
 });
 
-/*
-function generateAddBookmark() {
-  return `<h2>Bookmark App</h2>
-  <button class="add-bookmark" type='submit'>Add Bookmark</button>
-  </form>
-  `;
-}
-*/
+const generateItemElement = function (item) {
+  let itemTitle = `<span class="">${item.name}</span>`;
+  return `
+    <li class="" data-item-id="${item.id}">
+      ${itemTitle}
+      <div class="">
+        <button class="">Edit</button>
+        <button class="">
+        <span>delete</span>
+        </button>
+      </div>
+    </li>`;
+};
+
+const generateBookmarkString = function (bookmarks) {
+  const items = bookmarks.map((item) => generateItemElement(item));
+  return items.join('');
+};
 
 function generateBookmarkData() {
   return `
@@ -34,18 +44,12 @@ function generateBookmarkData() {
   <label for="js-desc">Description</label>
   <input type="text" name="desc" id="js-desc" class="" required>
   <label for="js-rating">Rating</label>
-  <input type="text" name="rating" id="js-rating" class="" required>
+  <input type="number" name="rating" maxlength="5" id="js-rating" class="" required>
   <button class="add-bookmark" type='submit'>Add Bookmark</button>
   </form>
   </div>
   `;
 }
-
-/*
-function generateBookmarkList() {
-
-}
-*/
 
 const generateError = function (message) {
   return `
@@ -54,11 +58,6 @@ const generateError = function (message) {
         <p>${message}</p>
       </section>
     `;
-};
-
-const render = function () {
-  let html = generateBookmarkData();
-  $('main').html(html);
 };
 
 const renderError = function () {
@@ -73,13 +72,12 @@ const renderError = function () {
 function handleNewItemSubmit() {
   $('main').on('submit', '#bookmark-entry-form', event => {
     event.preventDefault();
-    //console.log(event.target);
     console.log($(event.target).serializeJson());
     let bookmark =$(event.target).serializeJson();
     
-    api.createItem(bookmark)
+    api.createBookmark(bookmark)
       .then((newItem) => {
-        store.addItem(newItem);
+        store.addBookmark(newItem);
         render();
       })
       .catch((error) => {
@@ -90,9 +88,23 @@ function handleNewItemSubmit() {
   });
 }
 
+const render = function () {
+  renderError();
+  let html = generateBookmarkData();
+  $('main').html(html);
+
+  let items = [...store.items];
+
+  // render the shopping list in the DOM
+  const bookmarksString = generateBookmarkString(items);
+
+  // insert that HTML into the DOM
+  $('main').html(bookmarksString);
+};
+
+
 const bindEventListeners = function () {
   handleNewItemSubmit();
-  //handleItemCheckClicked();
   //handleDeleteItemClicked();
   //handleEditShoppingItemSubmit();
   //handleToggleFilterClick();
