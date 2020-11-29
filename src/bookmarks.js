@@ -58,12 +58,12 @@ const renderError = function () {
 };
 
 function handleNewItemSubmit() {
-  $('#bookmark-entry-form').on('submit', event => {
+  $('main').on('submit', '#bookmark-entry-form', event => {
     event.preventDefault();
     console.log(event.target);
     console.log($(event.target).serializeJson());
-    //let bookmark =$(event.target).serializeJson();
-    /*
+    let bookmark =$(event.target).serializeJson();
+    
     api.createItem(bookmark)
       .then((newItem) => {
         store.addItem(newItem);
@@ -73,7 +73,7 @@ function handleNewItemSubmit() {
         store.setError(error.message);
         renderError();
       });
-      */
+      
   });
 }
 
