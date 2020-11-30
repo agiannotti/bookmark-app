@@ -1,14 +1,10 @@
 const bookmarks = [];
-let adding = false;
-let error = null;
-let filter = 0;
+const adding = false;
+const error = null;
+const filter = 0;
 
 const findById = function (id) {
   return this.bookmarks.find(currentItem => currentItem.id === id);
-};
-
-const findAndDelete = function (id) {
-  this.bookmarks = this.bookmarks.filter(bookmarks => bookmarks.id !== id);
 };
 
 function findAndUpdate(id, newData){
@@ -22,6 +18,10 @@ const addBookmark = function (item) {
 
 const setError = function (error) {
   this.error = error;
+};
+
+const findAndDelete = function (id) {
+  this.bookmarks = this.bookmarks.filter(bookmarks => bookmarks.id !== id);
 };
 
 export default {

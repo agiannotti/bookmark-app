@@ -116,7 +116,8 @@ const generateItemElement = function (item) {
     }
     return starsView.join(' ');
   }
-  let itemTitle = `
+  let itemTitle = 
+  `
     <form id="js-edit-item-form">
     <input class="bookmark-item" type="text" value="${item.title}" required/></form> 
     <div class="rating-box">${ratingLabel(item)}</div>
@@ -127,6 +128,7 @@ const generateItemElement = function (item) {
     <button class="bookmark-item-toggle js-item-toggle"><span class="button-label">ok</span></button>
     <button class="bookmark-item-delete js-item-delete"><span class="button-label">delete</span></button>
     `;
+    
   if (!item.expanded) {
     itemTitle =
       `<div class="bookmark-box">
