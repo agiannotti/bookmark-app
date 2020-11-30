@@ -11,7 +11,7 @@ const main = function () {
   api.getBookmark()
   
     .then((items) => {
-      items.forEach((item) => store.addItem(item));
+      items.forEach((item) => store.addBookmark(item));
       items.forEach((item) => item.expanded = false);
       bookmarksList.render();
 

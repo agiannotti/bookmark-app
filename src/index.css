@@ -21,14 +21,50 @@ main {
   border-radius: 20px;
 }
 
+h1 {
+  font-size: 24px;
+}
+
+.bookmark-item {
+  background-color: #EDEDED;
+  border-radius: 20px;
+  border: 1px solid #B0A8B3;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+  text-align: center;
+}
+
+
 button {
-  padding: 25px;
+  padding: 16px;
   margin-bottom: 23px;
   margin-top: 10px;
   border-radius: 10px;
   border: 1px solid #B0A8B3;
   background-color: #F7F7F7;
 }
+
+ul {
+  list-style-type:none;
+  text-align: center;
+  list-style-position: inside;
+}
+
+.bookmark-item {
+  justify-content: center;
+  background-color: #F7F7F7;
+  padding: 10px 10px;
+  margin: 10px 10px;
+}
+
+
+input,textarea {
+  text-align: center;
+}
+
+a:link    { color:#546E7A; }
+a:hover   { color: #FFC0CB; }
 
 @media all and (min-width: 450px) {
   body {
@@ -39,7 +75,7 @@ button {
     margin: auto;
     width: 75%;
     padding: 50px;
-    width: 45%;
+    width: 65%;
   }
 
   #bookmark-entry-form {
