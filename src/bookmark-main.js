@@ -23,27 +23,7 @@ const render = function () {
   items = items.filter(item => item.rating >= store.filter);
   const bookmarkListItemsString = generatebookmarkItemsString(items);
   if (store.adding === false) {
-    let html =
-      `
-    <div class="new-bookmark-form"> </div>
-    <div class = "my-bookmarks-view">
-    <form id="initial-view">
-    <button class="initial-view-new"><span class="button-label">Add Bookmark</span></button>
-    <h1>Bookmark List</h1>
-    <select id="ratings" name="ratings">
-    <option> <span class="button-label"></span>Sort By Rating</span></option>
-    <option value="1">1</option>
-    <option value="2">2</option>
-    <option value="3">3</option>
-    <option value="4">4</option>
-    <option value="5">5</option>
-    <option value="0">Show All</option>
-    </select>
-    </form>
-    <p class="bookmark-list js-bookmark-list"></p>
-    </div>
-    `;
-
+    let html =generateFormView();
     $('.main').html(html);
     $('.js-bookmark-list').html(bookmarkListItemsString);
   } else {
@@ -67,7 +47,7 @@ const addNewForm = function () {
       <div class="error-container"> </div>
       <form id="js-new-bookmark-form">
       <button class="create" type="submit">Add</button>
-      <button class="cancel" type="reset">cancel</button>
+      <button class="cancel" type="reset">Cancel</button>
       <br>
       <label for="bookmark-entry">Bookmark URL</label>
       <br>
@@ -121,22 +101,24 @@ const generateItemElement = function (item) {
   }
   let itemTitle = 
   `
-    <form id="js-edit-item-form">
-    <input class="bookmark-item" type="text" value="${item.title}" required/></form> 
+    <form id="js-edit-item-form"></form>
+    <input class="bookmark-item" type="text" value="${item.title}" required/>
     <div class="rating-box">${ratingNumber(item)}</div>
     <br>
     <label><a href="${item.url}" target="new_blank">${item.url}</a></label>
-    <section class="bookmark-desc">${item.desc}</section>
+    <div class="bookmark-desc">${item.desc}</div>
     <div class="bookmark-item-controls">
     <button class="bookmark-item-toggle js-item-toggle"><span class="button-label">Save</span></button>
     <button class="bookmark-item-delete js-item-delete"><span class="button-label">Delete</span></button>
+    </div>
     `;
 
   if (!item.expanded) {
     itemTitle =
       `<div class="bookmark-box">
-    <span class="bookmark-item bookmark-item__expanded">${item.title}</span>
-    <div class="rating-box">${ratingNumber(item)}</div></div> `;
+    <div class="bookmark-item bookmark-item_expanded">${item.title}</div>
+    <div class="rating-box">${ratingNumber(item)}</div>
+    </div> `;
   }
   return `
     <div class="js-item-element" data-item-id="${item.id}">
@@ -156,6 +138,28 @@ const generateError = function () {
     <button id="cancel-error">URL and Title are required!</button>
     </section>
     `;
+};
+
+const generateFormView = function () {
+  return`
+  <div class="new-bookmark-form"> </div>
+  <div class = "my-bookmarks-view">
+  <header>
+  <form id="initial-view">
+  <button class="initial-view-new"><span class="button-label">Add Bookmark</span></button>
+  <br>
+  <select id="ratings" name="ratings">
+  <option> <span class="button-label"></span>Filter By</span></option>
+  <option value="1">1 star</option>
+  <option value="2">2 stars</option>
+  <option value="3">3 stars</option>
+  <option value="4">4 stars</option>
+  <option value="5">5 stars</option>
+  </select>
+  </form>
+  </header>
+  <p class="bookmark-list js-bookmark-list"></p>
+  </div>`;
 };
 
 const handleCloseError = function () {
@@ -223,7 +227,7 @@ const handleEditbookmarkItemSubmit = function () {
 };
 
 const handleItemExpandClicked = function () {
-  $('.main').on('click', '.bookmark-item__expanded', event => {
+  $('.main').on('click', '.bookmark-item_expanded', event => {
     const id = getItemIdFromElement(event.currentTarget);
     const item = store.findById(id);
     item.expanded = !item.expanded;

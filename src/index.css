@@ -4,9 +4,6 @@ body {
   margin: auto;
   padding: 10px 10px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   font-family: 'Tenor Sans', sans-serif;
   font-size: 18px;
 }
@@ -51,26 +48,22 @@ ul {
   list-style-position: inside;
 }
 
-.bookmark-item {
-  justify-content: center;
+.bookmark-item, .bookmark-item_expanded {
   background-color: #F7F7F7;
   padding: 10px 10px;
   margin: 10px 10px;
-}
-
-
-input,textarea {
-  text-align: center;
 }
 
 a:link    { color:#546E7A; }
 a:hover   { color: #FFC0CB; }
 
 @media all and (min-width: 450px) {
+
   body {
     display: flex;
     flex-direction: column;
   }
+
   main {
     margin: auto;
     width: 75%;
@@ -87,7 +80,6 @@ a:hover   { color: #FFC0CB; }
 
   button {
     margin-top: 24px;
-  }
-  
+  } 
 }
 
