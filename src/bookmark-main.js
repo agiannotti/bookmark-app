@@ -68,7 +68,8 @@ const addNewForm = function () {
       <form id="js-new-bookmark-form">
       <button class="create" type="submit">create</button>
       <button class="cancel" type="reset">cancel</button>
-      <label for="bookmark-entry">Add New Bookmark:</label><br>
+      <label for="bookmark-entry">Bookmark URL:</label>
+      <br>
       <input type="text" name="url" class="bookmark-url-entry" value="https://"placeholder="https://www.google.com" required>
       <br>
       <label for="bookmark-title-entry">Bookmark Title:</label>
@@ -77,22 +78,22 @@ const addNewForm = function () {
       <br>
       <label for="bookmark-title-entry">Description</label>
       <br>
-      <input type="text" name="desc" class="bookmark-description-entry" placeholder="description">
+      <input type="text" name="desc" class="bookmark-description-entry" placeholder="Details">
       <br>
       <label for="bookmark-rating-entry">Rating:</label>
       <br>
       <div class="txt-center">
       <div class="rating">
       <input id="star5" name="rating" type="radio" value="5" class="radio-btn hide" />
-      <label for="star5" >☆</label>
+      <label for="star5" >1</label>
       <input id="star4" name="rating" type="radio" value="4" class="radio-btn hide" />
-      <label for="star4" >☆</label>
+      <label for="star4" >2</label>
       <input id="star3" name="rating" type="radio" value="3" class="radio-btn hide" />
-      <label for="star3" >☆</label>
+      <label for="star3" >3</label>
       <input id="star2" name="rating" type="radio" value="2" class="radio-btn hide" />
-      <label for="star2" >☆</label>
+      <label for="star2" >4</label>
       <input id="star1" name="rating" type="radio" value="1" class="radio-btn hide" />
-      <label for="star1" >☆</label>
+      <label for="star1" >5</label>
       <div class="clear"></div>
       </div>
       </div>
@@ -128,7 +129,7 @@ const generateItemElement = function (item) {
     <button class="bookmark-item-toggle js-item-toggle"><span class="button-label">ok</span></button>
     <button class="bookmark-item-delete js-item-delete"><span class="button-label">delete</span></button>
     `;
-    
+
   if (!item.expanded) {
     itemTitle =
       `<div class="bookmark-box">
