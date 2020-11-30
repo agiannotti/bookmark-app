@@ -11,7 +11,6 @@ body {
   font-size: 18px;
 }
 
-
 main {
   text-align: center;
   display: flex;
@@ -22,7 +21,6 @@ main {
   border-radius: 20px;
 }
 
-
 button {
   padding: 25px;
   margin-bottom: 23px;
@@ -31,8 +29,6 @@ button {
   border: 1px solid #B0A8B3;
   background-color: #F7F7F7;
 }
-
-
 
 @media all and (min-width: 450px) {
   body {

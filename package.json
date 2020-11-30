@@ -1,6 +1,7 @@
 {
-  "name": "bookmarks-app",
+  "name": "Anthony_Giannotti",
   "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -8,25 +9,30 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/thinkful-ei-heron/shopping-list-starter.git"
+    "url": ""
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "bookmarks"
+  ],
+  "author": "Anthony_Giannotti",
   "license": "ISC",
-  "bugs": {},
+  "bugs": {
+    "url": ""
+  },
+  "homepage": "https://github.com/thinkful-ei-heron/Anthony_Giannotti/#readme",
   "devDependencies": {
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "source-map-loader": "^1.1.2",
     "style-loader": "^1.0.0",
     "webpack": "^4.40.1",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
+    "create-react-app": "^4.0.1",
     "cuid": "^2.1.6",
-    "jquery": "^3.5.1",
+    "jquery": "^3.4.1",
     "normalize.css": "^8.0.1"
   }
 }

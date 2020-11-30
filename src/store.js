@@ -1,32 +1,23 @@
-const items = {
-  bookmarks: [],
-  adding: false,
-  error: null,
-  filter: 0
-};
-
+const bookmarks = [];
+let adding = false;
 let error = null;
-let hideCheckeditems = false;
+let filter = 0;
 
 const findById = function (id) {
-  return this.items.find(currentItem => currentItem.id === id);
-};
-
-const addBookmark = function (item) {
-  this.items.push(item);
+  return this.bookmarks.find(currentItem => currentItem.id === id);
 };
 
 const findAndDelete = function (id) {
-  this.items = this.items.filter(currentItem => currentItem.id !== id);
+  this.bookmarks = this.bookmarks.filter(bookmarks => bookmarks.id !== id);
 };
 
-const toggleCheckedFilter = function () {
-  this.hideCheckedItems = !this.hideCheckedItems;
-};
+function findAndUpdate(id, newData){
+  const updateItem = this.bookmarks.find(item => item.id===id);
+  Object.assign(updateItem, newData);
+}
 
-const findAndUpdate = function (id, newData) {
-  const currentItem = this.findById(id);
-  Object.assign(currentItem, newData);
+const addBookmark = function (item) {
+  this.bookmarks.push(item);
 };
 
 const setError = function (error) {
@@ -34,13 +25,13 @@ const setError = function (error) {
 };
 
 export default {
-  items,
-  error,
-  hideCheckeditems,
   findById,
   addBookmark,
-  findAndDelete,
-  toggleCheckedFilter,
   findAndUpdate,
-  setError
+  findAndDelete,
+  setError,
+  error,
+  bookmarks,
+  adding,
+  filter 
 };
