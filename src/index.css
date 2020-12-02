@@ -32,8 +32,15 @@ h1 {
   border: 1px solid #B0A8B3;
   display: flex;
   flex-direction: column;
+  margin: auto;
   order: 1;
   text-align: center;
+}
+
+.bookmark-list .js-bookmark-list {
+  margin: auto;
+  display: flex;
+  flex-direction:column;
 }
 
 button {
@@ -62,7 +69,7 @@ ul {
 }
 
 .rating-box {
-  padding: 6px;
+  margin: 15px;
 }
 
 a:link    { color:#546E7A; }
@@ -99,7 +106,6 @@ a:hover   { color: #FFC0CB; }
 
   .bookmark-item {
     background-color: #F7F7F7;
-    padding: 10px 10px;
     width: 50%;
     margin: auto;
   }
@@ -107,10 +113,6 @@ a:hover   { color: #FFC0CB; }
   .my-bookmarks-view {
     margin: 0px 100px;
   }
-  
-  .rating-box {
-    padding: 6px;
-  }
-  
+
 }
 
