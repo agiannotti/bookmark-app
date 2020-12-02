@@ -1,5 +1,5 @@
 # Bookmark App
-[Named Link](https://thinkful-ei-unicorn.github.io/anthony-giannotti-bookmarks-app/dist/ "Live Page")  
+[Live Github](https://thinkful-ei-unicorn.github.io/anthony-giannotti-bookmarks-app/dist/ "Live Page")  
   
 Demonstrates functionality of adding, removing, and editing bookmarks utilizing an API and a local database. 
 ## Installation
