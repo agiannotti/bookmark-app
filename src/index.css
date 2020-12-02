@@ -1,16 +1,19 @@
+
 body {
   background-color: #D9D9D9;
   color: #59564B;
   margin: auto;
   padding: 10px 10px;
   text-align: center;
-  font-family: 'Tenor Sans', sans-serif;
   font-size: 18px;
+  letter-spacing: 1.5px;
 }
 
 main {
   text-align: center;
   display: flex;
+  font-family: 'Baloo Chettan 2';
+  letter-spacing: 1.5px;
   flex-direction: column;
   border: 1px solid #B0A8B3;
   padding: 50px;
