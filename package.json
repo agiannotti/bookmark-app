@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/okaysame/bookmark-app.git"
+    "url": "https://thinkful-ei-unicorn.github.io/anthony-giannotti-bookmarks-app/"
   },
   "keywords": [
     "bookmarks"
@@ -17,9 +17,9 @@
   "author": "Anthony Giannotti",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/okaysame/bookmark-app.git"
+    "url": "https://thinkful-ei-unicorn.github.io/anthony-giannotti-bookmarks-app/"
   },
-  "homepage": "https://github.com/thinkful-ei-heron/Anthony_Giannotti/#readme",
+  "homepage": "https://thinkful-ei-unicorn.github.io/anthony-giannotti-bookmarks-app/dist/",
   "devDependencies": {
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",

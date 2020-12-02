@@ -4,6 +4,7 @@ body {
   color: #59564B;
   margin: auto;
   padding: 10px 10px;
+  padding-top: 100px;
   text-align: center;
   font-size: 18px;
   letter-spacing: 1.5px;
@@ -63,13 +64,14 @@ ul {
 a:link    { color:#546E7A; }
 a:hover   { color: #FFC0CB; }
 
-@media all and (min-width: 920px) {
+@media all and (min-width: 733px) {
 
   body {
     background-color: #D9D9D9;
     color: #59564B;
     margin: auto;
-    padding: 10px 10px;
+    padding: 10px;
+    padding-top: 100px;
     text-align: center;
     font-family: 'Tenor Sans', sans-serif;
     font-size: 18px;
@@ -83,7 +85,8 @@ a:hover   { color: #FFC0CB; }
     padding: 50px;
     background-color: #EDEDED;
     border-radius: 20px;
-    margin: 50px 175px 160px;
+    width: 45%;
+    margin: auto;
   }
 
   button {
@@ -93,6 +96,7 @@ a:hover   { color: #FFC0CB; }
   .bookmark-item {
     background-color: #F7F7F7;
     padding: 10px 10px;
+    width: 50%;
     margin: auto;
   }
   
