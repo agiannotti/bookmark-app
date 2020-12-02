@@ -1,5 +1,5 @@
 {
-  "name": "Anthony_Giannotti",
+  "name": "Anthony Giannotti",
   "version": "1.0.0",
   "description": "Thinkful Bookmark App!",
   "main": "index.js",
@@ -14,7 +14,7 @@
   "keywords": [
     "bookmarks"
   ],
-  "author": "Anthony_Giannotti",
+  "author": "Anthony Giannotti",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/okaysame/bookmark-app.git"

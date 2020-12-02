@@ -32,7 +32,6 @@ h1 {
   text-align: center;
 }
 
-
 button {
   padding: 16px;
   margin-bottom: 23px;
@@ -51,35 +50,51 @@ ul {
 .bookmark-item, .bookmark-item_expanded {
   background-color: #F7F7F7;
   padding: 10px 10px;
-  margin: 10px 10px;
+  margin: auto;
+}
+
+.my-bookmarks-view {
+  margin: auto;
 }
 
 a:link    { color:#546E7A; }
 a:hover   { color: #FFC0CB; }
 
-@media all and (min-width: 450px) {
+@media all and (min-width: 920px) {
 
   body {
-    display: flex;
-    flex-direction: column;
+    background-color: #D9D9D9;
+    color: #59564B;
+    margin: auto;
+    padding: 10px 10px;
+    text-align: center;
+    font-family: 'Tenor Sans', sans-serif;
+    font-size: 18px;
   }
 
   main {
-    margin: auto;
-    width: 75%;
-    padding: 50px;
-    width: 65%;
-  }
-
-  #bookmark-entry-form {
+    text-align: center;
     display: flex;
     flex-direction: column;
-    width: 75%;
-    margin: auto;
+    border: 1px solid #B0A8B3;
+    padding: 50px;
+    background-color: #EDEDED;
+    border-radius: 20px;
+    margin: 50px 175px 160px;
   }
 
   button {
     margin-top: 24px;
   } 
+
+  .bookmark-item {
+    background-color: #F7F7F7;
+    padding: 10px 10px;
+    margin: auto;
+  }
+  
+  .my-bookmarks-view {
+    margin: 0px 100px;
+  }
 }
 

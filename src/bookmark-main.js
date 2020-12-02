@@ -67,15 +67,15 @@ const addNewForm = function () {
       <div class="rating">
       <br>
       <input id="1" name="rating" type="radio" value="1" class="radio-btn hide" />
-      <label for="1" >1</label>
+      <label for="1" >1♡</label>
       <input id="2" name="rating" type="radio" value="2" class="radio-btn hide" />
-      <label for="2" >2</label>
+      <label for="2" >2♡</label>
       <input id="3" name="rating" type="radio" value="3" class="radio-btn hide" />
-      <label for="3" >3</label>
+      <label for="3" >3♡</label>
       <input id="4" name="rating" type="radio" value="4" class="radio-btn hide" />
-      <label for="4" >4</label>
+      <label for="4" >4♡</label>
       <input id="5" name="rating" type="radio" value="5" class="radio-btn hide" />
-      <label for="5" >5</label>
+      <label for="5" >5♡</label>
       <div class="clear"></div>
       </div>
       </div>
@@ -92,9 +92,9 @@ const addNewForm = function () {
 const generateItemElement = function (item) {
   function ratingNumber(item) {
     let rated =[];
-    if (item.rating < 1) {
+    if (item.rating > 1) {
       for (let i = 0; i < item.rating; i++) {
-        rated.push('<label type="radio" checked="checked" class="rated"></label>');
+        rated.push('<label type="radio" checked="checked" class="rated">♡</label>');
       }
     }
     return rated.join(' ');
@@ -126,7 +126,6 @@ const generateItemElement = function (item) {
     </div>`;
 };
 
-
 const generatebookmarkItemsString = function (bookmarksList) {
   const items = bookmarksList.map((item) => generateItemElement(item));
   return items.join('');
@@ -145,16 +144,16 @@ const generateFormView = function () {
   <div class="new-bookmark-form"> </div>
   <div class = "my-bookmarks-view">
   <header>
-  <form id="initial-view">
-  <button class="initial-view-new"><span class="button-label">Add Bookmark</span></button>
+  <form id="bookmark-form">
+  <button class="add-bookmark"><span class="button-label">Add Bookmark</span></button>
   <br>
   <select id="ratings" name="ratings">
   <option> <span class="button-label"></span>Filter By</span></option>
-  <option value="1">1 star</option>
-  <option value="2">2 stars</option>
-  <option value="3">3 stars</option>
-  <option value="4">4 stars</option>
-  <option value="5">5 stars</option>
+  <option value="1">1 heart</option>
+  <option value="2">2 hearts</option>
+  <option value="3">3 hearts</option>
+  <option value="4">4 hearts</option>
+  <option value="5">5 hearts</option>
   </select>
   </form>
   </header>
@@ -260,7 +259,7 @@ const handleNewCancel = function () {
 };
 
 const handleNewSubmit = function () {
-  $('.main').on('click', '.initial-view-new', function () {
+  $('.main').on('click', '.add-bookmark', function () {
     event.preventDefault();
  
     store.adding = true;
