@@ -107,5 +107,10 @@ a:hover   { color: #FFC0CB; }
   .my-bookmarks-view {
     margin: 0px 100px;
   }
+  
+  .rating-box {
+    padding: 6px;
+  }
+  
 }
 
