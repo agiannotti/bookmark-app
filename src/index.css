@@ -61,6 +61,10 @@ ul {
   margin: auto;
 }
 
+.rating-box {
+  padding: 6px;
+}
+
 a:link    { color:#546E7A; }
 a:hover   { color: #FFC0CB; }
 
