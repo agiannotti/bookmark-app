@@ -87,7 +87,7 @@ const handleSubmitAdd = function() {
 };
 
 const handleSubmitCancel = function () {
-  $('.cancel-button').on('click', function(e){
+  $('.cancel-button').on('', function(e){
     e.preventDefault();
     store.STORE.adding = false;
     render();
@@ -97,7 +97,6 @@ const handleSubmitCancel = function () {
 
 const handleFilter = function () {
   $('.filter').on('change', function(){
-    console.log(store.STORE.filter);
     let filter = $('#filter option:selected').val();
     store.STORE.filter = filter;
     render();
