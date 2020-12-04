@@ -9,8 +9,9 @@ const generateMain = function(htmlList) {
   <div class="add-bookmark">
   <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
   </div>
+  <label for="select">Sort By Rating</label>
+  <br>
   <select name="filter" id="filter" class="filter">
-  <option value="0">Filter by</option>
   <option value="0">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
