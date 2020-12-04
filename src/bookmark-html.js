@@ -1,4 +1,3 @@
-/* eslint-disable quotes */
 import store from './store';
 
 
@@ -89,7 +88,6 @@ function addBookmark() {
   <div class="stars">
   <p>Rating</p>
   <input type="radio" name="rating" value="1" required/>
-
   <label for="1" >1</label>
   <input id="2" name="rating" type="radio" value="2" class="radio-btn hide" />
   <label for="2" >2</label>
@@ -99,7 +97,6 @@ function addBookmark() {
   <label for="4" >4</label>
   <input id="5" name="rating" type="radio" value="5" class="radio-btn hide" />
   <label for="5" >5</label>
-
   </div>
   <div class="error-message"></div>
   </div>

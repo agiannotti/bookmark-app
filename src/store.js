@@ -33,5 +33,4 @@ export default {
   setError,
   expandThis,
   addBookmark
-  
 };
