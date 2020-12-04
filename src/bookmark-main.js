@@ -16,14 +16,14 @@ $.fn.extend({
 const render = function () {
   const renderBookmark = [...store.STORE.bookmarks];
   if (store.STORE.adding === false) {
-    $("main").html(html.generateMain(renderBookmark));
+    $('main').html(html.generateMain(renderBookmark));
     renderError();
     handleAddBookmark();
     handleExpand();
     handleFilter();
     handleBookmarkDelete();
   } else {
-    $("main").html(html.addBookmark());
+    $('main').html(html.addBookmark());
     handleSubmitAdd();
     handleSubmitCancel();
     renderError();
@@ -49,9 +49,9 @@ const generateError = function (message) {
       `;
 };
 
-const getIdFromElement = function (item) {
+const getBookmarkId = function (item) {
   return $(item)
-    .closest('.collapsible')
+    .closest('.expand')
     .data('bookmark-id');
 };
 
@@ -62,8 +62,8 @@ const getDelete = function (item) {
 };
 
 const handleExpand = function () {
-  $('.collapsible').click((event => {
-    const panelID = getIdFromElement(event.currentTarget);
+  $('.expand').click((event => {
+    const panelID = getBookmarkId(event.currentTarget);
     store.expandThis(panelID);
     render();
   }));
@@ -95,7 +95,7 @@ const handleSubmitCancel = function () {
 
 
 const handleFilter = function () {
-  $('.filter').change,(() => {
+  $('.filter').on('change', function(){
     let filter = $('#filter').val();
     store.STORE.filter = filter;
     render();
@@ -127,7 +127,7 @@ const handleError = function () {
 
 
 const handleAddBookmark= function () {
-  $('.new-button').click(()=> {
+  $('.add-bookmark').click(()=> {
     store.STORE.adding = true;
     render();
   });
