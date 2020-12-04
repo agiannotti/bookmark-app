@@ -1,37 +1,36 @@
-const bookmarks = [];
-const adding = false;
-const error = null;
-const filter = 0;
+const STORE = {
+  bookmarks: [],
+  adding: false,
+  error: null,
+  filter: 0
+};
 
 const findById = function (id) {
-  return this.bookmarks.find(currentItem => currentItem.id === id);
+  return STORE.bookmarks.find(currentItem => currentItem.id === id);
 };
 
-function findAndUpdate(id, newData){
-  const updateItem = this.bookmarks.find(item => item.id===id);
-  Object.assign(updateItem, newData);
-}
+const expandThis = function (id) {
+  let selectedItem = findById(id);
+  selectedItem.expanded = (!selectedItem.expanded);
+};
 
 const addBookmark = function (item) {
-  this.bookmarks.push(item);
-};
-
-const setError = function (error) {
-  this.error = error;
+  this.STORE.bookmarks.push(item);
 };
 
 const findAndDelete = function (id) {
-  this.bookmarks = this.bookmarks.filter(bookmarks => bookmarks.id !== id);
+  STORE.bookmarks = STORE.bookmarks.filter(currentItem => currentItem.id !== id);
+};
+
+const setError = function (error) {
+  this.STORE.error = error;
 };
 
 export default {
+  STORE,
   findById,
-  addBookmark,
-  findAndUpdate,
   findAndDelete,
   setError,
-  error,
-  bookmarks,
-  adding,
-  filter 
+  expandThis,
+  addBookmark
 };
