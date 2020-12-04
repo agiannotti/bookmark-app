@@ -21,10 +21,12 @@ const render = function () {
   renderError();
   let items = [...store.bookmarks];
   items = items.filter(item => item.rating >= store.filter);
+  // eslint-disable-next-line no-debugger
+  //debugger;
   const bookmarkListItemsString = generatebookmarkItemsString(items);
   if (store.adding === false) {
     let html =generateFormView();
-    $('.main').html(html);
+    $('main').html(html);
     $('.js-bookmark-list').html(bookmarkListItemsString);
   } else {
     $('.my-bookmarks-view').empty();
@@ -43,40 +45,39 @@ const renderError = function () {
 const addNewForm = function () {
   if (store.adding) {
     const newForm = 
-    ` 
+    `
       <div class="error-container"> </div>
       <form id="js-new-bookmark-form">
-      <button class="create" type="submit">Add</button>
-      <button class="cancel" type="reset">Cancel</button>
       <br>
-      <label for="bookmark-entry">Bookmark URL</label>
+      <label for="url">Bookmark URL</label>
       <br>
       <input type="text" name="url" class="bookmark-url-entry" value="https://"placeholder="https://www.google.com" required>
       <br>
-      <label for="bookmark-title-entry">Bookmark Title</label>
+      <label for="title">Bookmark Title</label>
       <br>
       <input type="text" name="title" class="bookmark-title-entry" placeholder="Google" >
       <br>
-      <label for="bookmark-title-entry">Description</label>
+      <label for="desc">Description</label>
       <br>
       <input type="text" name="desc" class="bookmark-description-entry" placeholder="Details">
       <br>
-      <label for="bookmark-rating-entry">Rating</label>
+      <label for="rating">Rating</label>
       <br>
-      <div class="txt-center">
       <div class="rating">
-      <br>
-      <input id="1" name="rating" type="radio" value="1" class="radio-btn hide" />
+      <input id="1" name="rating" type="radio" value="1"/>
       <label for="1" >1♡</label>
-      <input id="2" name="rating" type="radio" value="2" class="radio-btn hide" />
+      <input id="2" name="rating" type="radio" value="2"/>
       <label for="2" >2♡</label>
-      <input id="3" name="rating" type="radio" value="3" class="radio-btn hide" />
+      <input id="3" name="rating" type="radio" value="3"/>
       <label for="3" >3♡</label>
-      <input id="4" name="rating" type="radio" value="4" class="radio-btn hide" />
+      <input id="4" name="rating" type="radio" value="4"/>
       <label for="4" >4♡</label>
-      <input id="5" name="rating" type="radio" value="5" class="radio-btn hide" />
+      <input id="5" name="rating" type="radio" value="5"/>
       <label for="5" >5♡</label>
       <div class="clear"></div>
+      <br>
+      <button class="create" type="submit">Add</button>
+      <button class="cancel" type="reset">Cancel</button>
       </div>
       </div>
       </form>
@@ -108,15 +109,16 @@ const generateItemElement = function (item) {
     <label><a href="${item.url}" target="new_blank">${item.url}</a></label>
     <div class="bookmark-desc">${item.desc}</div>
     <div class="bookmark-item-controls">
-    <button class="bookmark-item-toggle js-item-toggle"><span class="button-label">Save</span></button>
-    <button class="bookmark-item-delete js-item-delete"><span class="button-label">Delete</span></button>
+    </form>
+    <button class="bookmark-item-toggle js-item-save"><span class="button-save">Save</span></button>
+    <button class="bookmark-item-delete js-item-delete"><span class="button-delete">Delete</span></button>
     </div>
     `;
 
   if (!item.expanded) {
     itemTitle =
       `<div class="bookmark-box">
-    <div class="bookmark-item bookmark-item_expanded">${item.title}</div>
+    <div class="bookmark-item bookmark-expanded">${item.title}</div>
     <div class="rating-box">${ratingNumber(item)}</div>
     </div> `;
   }
@@ -141,6 +143,7 @@ const generateError = function () {
 
 const generateFormView = function () {
   return`
+  <h1>Bookmark App!</h1>
   <div class="new-bookmark-form"> </div>
   <div class = "my-bookmarks-view">
   <header>
@@ -162,16 +165,18 @@ const generateFormView = function () {
 };
 
 const handleCloseError = function () {
-  $('.main').on('click', '#cancel-error', () => {
+  $('main').on('click', '#cancel-error', () => {
     store.setError(null);
     renderError();
   });
 };
 
 const handleNewItemSubmit = function () {
-  $('.main').on('submit', '#js-new-bookmark-form', event => {
+  $('main').on('submit', '#js-new-bookmark-form', event => {
     event.preventDefault();
     const bookmark = $(event.target).serializeJson();
+    // eslint-disable-next-line no-debugger
+    debugger;
     api.createBookmark(bookmark)
       .then((bookmark) => {
         store.addBookmark(bookmark);
@@ -188,7 +193,7 @@ const handleNewItemSubmit = function () {
 };
 
 const handleDeleteItemClicked = function () {
-  $('.main').on('click', '.js-item-delete', event => {
+  $('main').on('click', '.js-item-delete', event => {
     const id = getItemIdFromElement(event.currentTarget);
     api.deleteBookmark(id)
       .then(() => {
@@ -203,7 +208,8 @@ const handleDeleteItemClicked = function () {
 };
 
 const handleEditbookmarkItemSubmit = function () {
-  $('.main').on('submit', '#js-edit-item-form', event => {
+  $('main').on('submit', '#js-edit-item-form', event => {
+    console.log('hi');
     event.preventDefault();
     const id = getItemIdFromElement(event.currentTarget);
     const itemName = $(event.currentTarget).find('.bookmark-item').val();
@@ -226,7 +232,7 @@ const handleEditbookmarkItemSubmit = function () {
 };
 
 const handleItemExpandClicked = function () {
-  $('.main').on('click', '.bookmark-item_expanded', event => {
+  $('main').on('click', '.bookmark-expanded', event => {
     const id = getItemIdFromElement(event.currentTarget);
     const item = store.findById(id);
     item.expanded = !item.expanded;
@@ -234,8 +240,8 @@ const handleItemExpandClicked = function () {
   });
 };
 
-const handleOkClicked = function () {
-  $('.main').on('click', '.js-item-toggle', event => {
+const handleSaveClicked = function () {
+  $('main').on('click', '.js-item-save', event => {
     const id = getItemIdFromElement(event.currentTarget);
     const item = store.findById(id);
     item.expanded = !item.expanded;
@@ -250,7 +256,7 @@ const handleFilterClick = function () {
 };
 
 const handleNewCancel = function () {
-  $('.main').on('click', '.cancel', function (event) {
+  $('main').on('click', '.cancel', function (event) {
     event.preventDefault();
     store.adding = false;
     addNewForm();
@@ -259,9 +265,8 @@ const handleNewCancel = function () {
 };
 
 const handleNewSubmit = function () {
-  $('.main').on('click', '.add-bookmark', function () {
+  $('main').on('click', '.add-bookmark', function (event) {
     event.preventDefault();
- 
     store.adding = true;
     addNewForm();
   });
@@ -271,12 +276,13 @@ const bindEventListeners = function () {
   handleNewItemSubmit();
   handleItemExpandClicked();
   handleDeleteItemClicked();
+  handleSaveClicked();
   handleEditbookmarkItemSubmit();
   handleCloseError();
   handleNewSubmit();
   handleNewCancel();
-  handleOkClicked();
-  $('.main').on('change', '#ratings', handleFilterClick);
+  
+  $('main').on('change', '#ratings', handleFilterClick);
 };
 
 export default {

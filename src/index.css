@@ -46,8 +46,7 @@ h1 {
 
 button {
   padding: 16px;
-  margin-bottom: 23px;
-  margin-top: 10px;
+  margin: 20px 5px;
   border-radius: 10px;
   border: 1px solid #B0A8B3;
   background-color: #F7F7F7;
@@ -59,7 +58,7 @@ ul {
   list-style-position: inside;
 }
 
-.bookmark-item, .bookmark-item_expanded {
+.bookmark-item, .bookmark-expanded {
   background-color: #F7F7F7;
   padding: 10px 10px;
   margin: auto;
