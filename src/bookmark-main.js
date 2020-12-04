@@ -97,11 +97,9 @@ const handleSubmitCancel = function () {
 
 const handleFilter = function () {
   $('.filter').on('change', function(){
-    store.STORE.filter = 0;
     console.log(store.STORE.filter);
     let filter = $('#filter option:selected').val();
     store.STORE.filter = filter;
-    console.log(filter);
     render();
   });
 };

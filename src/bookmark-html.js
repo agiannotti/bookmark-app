@@ -11,7 +11,7 @@ const generateMain = function(htmlList) {
   </div>
   <label value="filter">Filter By Rating
   <br>
-  <select name="filter" id="filter" class="filter" default='0'>
+  <select name="filter" id="filter" class="filter">
   <option>Filter</option>
   <option value="1">1</option>
   <option value="2">2</option>
@@ -95,16 +95,16 @@ function addBookmark() {
   <label>Rating:
   <br>
   <select name="rating" id="rating">
-  <option value="1" selected="selected">1</option>
-  <option value="2" selected="selected">2</option>
-  <option value="3" selected="selected">3</option>
-  <option value="4" selected="selected">4</option>
-  <option value="5" selected="selected">5</option>
+  <option value="1" >1</option>
+  <option value="2" >2</option>
+  <option value="3" >3</option>
+  <option value="4" >4</option>
+  <option value="5" >5</option>
   </select>
   </label>
   <div class="error-message"></div>
   </div>
-  <div>
+  <div class="save-and-cancel">
   <button type="submit" class="submit-form">Save</button>
   <button type-"submit" class="cancel-button">Cancel</button>
   </div>

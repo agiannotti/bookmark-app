@@ -147,4 +147,8 @@ a:hover   { color: #FFC0CB; }
   #filter, .filter, #rating {
     width: 18%;
   }
+
+  .save-and-cancel {
+    margin-top: 10px;
+  }
 }
