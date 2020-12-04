@@ -11,8 +11,8 @@ const generateMain = function(htmlList) {
   </div>
   <label value="filter">Sort By Rating
   <br>
-  <select name="filter" id="filter" class="filter">
-  <option value="0">${store.STORE.filter}</option>
+  <select name="filter" id="filter" class="filter" default='0'>
+  <option>Filter</option>
   <option value="1">1</option>
   <option value="2">2</option>
   <option value="3">3</option>
