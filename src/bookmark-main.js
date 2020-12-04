@@ -49,9 +49,9 @@ const generateError = function (message) {
       `;
 };
 
-const getIdFromElement = function (item) {
+const getBookmarkId = function (item) {
   return $(item)
-    .closest('.collapsible')
+    .closest('.expand')
     .data('bookmark-id');
 };
 
@@ -62,8 +62,8 @@ const getDelete = function (item) {
 };
 
 const handleExpand = function () {
-  $('.collapsible').click((event => {
-    const panelID = getIdFromElement(event.currentTarget);
+  $('.expand').click((event => {
+    const panelID = getBookmarkId(event.currentTarget);
     store.expandThis(panelID);
     render();
   }));
@@ -127,7 +127,7 @@ const handleError = function () {
 
 
 const handleAddBookmark= function () {
-  $('.new-button').click(()=> {
+  $('.add-bookmark').click(()=> {
     store.STORE.adding = true;
     render();
   });

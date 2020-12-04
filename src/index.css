@@ -27,7 +27,7 @@ h1 {
   font-size: 24px;
 }
 
-#bookmark, .collapsible, .error-content {
+#bookmark, .expand, .error-content {
   font-size: 16px;
   background-color: #F7F7F7;
   border-radius: 20px;
@@ -113,7 +113,7 @@ a:hover   { color: #FFC0CB; }
     margin: auto;
   }
 
-  button, .new-button {
+  button, .add-bookmark {
     margin:auto;
     margin-bottom: 8px;
   } 
@@ -130,5 +130,9 @@ a:hover   { color: #FFC0CB; }
 
   #enter-link, #enter-title, #input-description, #filter-filter, #filter {
     width: 45%;
+  }
+
+  .ratings {
+    margin-bottom: 10px;
   }
 }

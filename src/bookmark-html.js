@@ -2,12 +2,12 @@ import store from './store';
 
 
 const generateMain = function(htmlList) {
-  let listHtml = htmlList.map(array => generateView(array));  
+  let listHtml = htmlList.map(array => generateBookmark(array));  
   return `
   <div id="buttons" class="buttons">
   <h1>Bookmark App!</h1>
-  <div class="new-button">
-  <button id="new-button" class="new-button">Add Bookmark</button>
+  <div class="add-bookmark">
+  <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
   </div>
   <select name="filter" id="filter" class="filter">
   <option value="0">Filter by</option> 
@@ -24,22 +24,22 @@ const generateMain = function(htmlList) {
   </div>`;
 };
 
-const generateView = function (array) {
+const generateBookmark = function (array) {
   if (array.rating >= store.STORE.filter) {
     if(array.expanded === true){
-      return panelView(array);
+      return expandedView(array);
     } else {
-      return defaultView(array);
+      return mainView(array);
     }
   }
 };
 
 
 
-const defaultView = function (array) {
+const mainView = function (array) {
   return `
   <div class="content">
-  <button type="button" class="collapsible" id="bookmark" data-bookmark-id="${array.id}">
+  <button type="button" class="expand" id="bookmark" data-bookmark-id="${array.id}">
   <div class="button-text" id="button-text">${array.title}</div>
   <div class="display-rating">
   ${array.rating}
@@ -47,10 +47,10 @@ const defaultView = function (array) {
   `;
 };
 
-const panelView = function (array) {
+const expandedView = function (array) {
   return `
   <div class="content">
-  <button type="button" class="collapsible" id="bookmark" data-bookmark-id="${array.id}">
+  <button type="button" class="expand" id="bookmark" data-bookmark-id="${array.id}">
   <div class="button-text" id="button-text">${array.title}</div>
   <div class="etoiles">
   ${array.rating}
@@ -85,7 +85,7 @@ function addBookmark() {
   <label for="desc">Description</label>
   <br>
   <input type="text" name="desc" id="input-description" placeholder="Description" />
-  <div class="stars">
+  <div class="ratings">
   <p>Rating</p>
   <input type="radio" name="rating" value="1" required/>
   <label for="1" >1</label>
