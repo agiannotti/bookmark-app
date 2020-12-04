@@ -9,7 +9,7 @@ const generateMain = function(htmlList) {
   <div class="add-bookmark">
   <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
   </div>
-  <label value="filter">Sort By Rating
+  <label value="filter">Filter By Rating
   <br>
   <select name="filter" id="filter" class="filter" default='0'>
   <option>Filter</option>
