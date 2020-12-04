@@ -87,7 +87,8 @@ const handleSubmitAdd = function() {
 };
 
 const handleSubmitCancel = function () {
-  $('.cancel-button').click(() => {
+  $('.cancel-button').on('click', function(e){
+    e.preventDefault();
     store.STORE.adding = false;
     render();
   });
@@ -95,8 +96,9 @@ const handleSubmitCancel = function () {
 
 
 const handleFilter = function () {
-  $('.filter').on('change', function(){
-    let filter = $('#filter').val();
+  $('.filter').on('change', function(event){
+    event.preventDefault();
+    let filter = $('#filter option:selected').text();
     store.STORE.filter = filter;
     render();
   });
@@ -127,7 +129,7 @@ const handleError = function () {
 
 
 const handleAddBookmark= function () {
-  $('.add-bookmark').click(()=> {
+  $('.add-bookmark').on('click', function() {
     store.STORE.adding = true;
     render();
   });

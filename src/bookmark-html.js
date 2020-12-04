@@ -5,19 +5,18 @@ const generateMain = function(htmlList) {
   let listHtml = htmlList.map(array => generateBookmark(array));  
   return `
   <div id="buttons" class="buttons">
-  <h1>Bookmark App!</h1>
+  <h1>Bookmark App</h1>
   <div class="add-bookmark">
   <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
   </div>
   <label for="filter">Sort By Rating</label>
   <br>
   <select name="filter" id="filter" class="filter">
-  <option value="0">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
-  
+  <option value="1" selected="selected">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3" selected="selected">3</option>
+  <option value="4" selected="selected">4</option>
+  <option value="5" selected="selected">5</option>
   </select>
   </div>
   <br>
@@ -54,7 +53,7 @@ const expandedView = function (array) {
   <div class="content">
   <button type="button" class="expand" id="bookmark" data-bookmark-id="${array.id}">
   <div class="button-text" id="button-text">${array.title}</div>
-  <div class="etoiles">
+  <div class="rating-display">
   ${array.rating}
   </div>
   </button> </div>
@@ -87,24 +86,21 @@ function addBookmark() {
   <label for="desc">Description</label>
   <br>
   <input type="text" name="desc" id="input-description" placeholder="Description" />
-  <div class="ratings">
-  <p>Rating</p>
-  <input id="1" name="rating" type="radio" value="1" class="radio-btn hide" />
-  <label for="1" >1</label>
-  <input id="2" name="rating" type="radio" value="2" class="radio-btn hide" />
-  <label for="2" >2</label>
-  <input id="3" name="rating" type="radio" value="3" class="radio-btn hide" />
-  <label for="3" >3</label>
-  <input id="4" name="rating" type="radio" value="4" class="radio-btn hide" />
-  <label for="4" >4</label>
-  <input id="5" name="rating" type="radio" value="5" class="radio-btn hide" />
-  <label for="5" >5</label>
-  </div>
+  <br>
+  <label for="rating">Rating:</label>
+  <br>
+  <select name="rating" id="rating">
+  <option value="1" selected="selected">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3" selected="selected">3</option>
+  <option value="4" selected="selected">4</option>
+  <option value="5" selected="selected">5</option>
+  </select>
   <div class="error-message"></div>
   </div>
   <div>
   <button type="submit" class="submit-form">Save</button>
-  <button class="cancel-button" default>Cancel</button>
+  <button type-"submit" class="cancel-button">Cancel</button>
   </div>
   </form>
   </div>`;
