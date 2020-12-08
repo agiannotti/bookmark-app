@@ -1,7 +1,7 @@
 # Bookmark App
 [Live Github](https://okaysame.github.io/bookmark-app/dist/ "Live Page")  
   
-Demonstrates functionality of adding, removing, and editing bookmarks utilizing an API and a local database. 
+Demonstrates functionality of adding and removing bookmarks utilizing an API and a local database. 
 ## Installation
 ```
 npm install
