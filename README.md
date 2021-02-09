@@ -32,12 +32,6 @@ User can add bookmarks to bookmark list. Bookmarks contain:
 
 •  Check all validations in the API documentation (e.g. title and url field required).  
 
-•  User can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection.  
-  
-## Technology Used  
-
-
-• Javascript, CSS, HTML  
-
+•  User can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection.
 
 
