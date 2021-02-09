@@ -1,5 +1,5 @@
 # Bookmarked
-[Live Deployment](https://agiannotti.github.io/quiz-app/)  
+[Live Deployment](https://agiannotti.github.io/bookmark-app/dist/)  
 
   
 Demonstrates functionality of adding and removing bookmarks utilizing an API and a local database. 
