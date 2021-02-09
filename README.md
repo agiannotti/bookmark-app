@@ -35,7 +35,7 @@ User can add bookmarks to bookmark list. Bookmarks contain:
 
 
 
-## Technology Used
+## Technology Used  
 
 
 • Javascript, CSS, HTML
