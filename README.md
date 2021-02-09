@@ -3,6 +3,7 @@
 
   
 Demonstrates functionality of adding and removing bookmarks utilizing an API and a local database. 
+
 ## Installation
 ```
 npm install
@@ -33,7 +34,7 @@ User can add bookmarks to bookmark list. Bookmarks contain:
 
 •  User can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection.  
   
-# Technology Used  
+## Technology Used  
 
 
 • Javascript, CSS, HTML  
