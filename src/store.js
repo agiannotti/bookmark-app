@@ -2,16 +2,16 @@ const STORE = {
   bookmarks: [],
   adding: false,
   error: null,
-  filter: 0
+  filter: 0,
 };
 
 const findById = function (id) {
-  return STORE.bookmarks.find(currentItem => currentItem.id === id);
+  return STORE.bookmarks.find((currentItem) => currentItem.id === id);
 };
 
 const expandThis = function (id) {
   let selectedItem = findById(id);
-  selectedItem.expanded = (!selectedItem.expanded);
+  selectedItem.expanded = !selectedItem.expanded;
 };
 
 const addBookmark = function (item) {
@@ -19,7 +19,9 @@ const addBookmark = function (item) {
 };
 
 const findAndDelete = function (id) {
-  STORE.bookmarks = STORE.bookmarks.filter(currentItem => currentItem.id !== id);
+  STORE.bookmarks = STORE.bookmarks.filter(
+    (currentItem) => currentItem.id !== id
+  );
 };
 
 const setError = function (error) {
@@ -32,5 +34,5 @@ export default {
   findAndDelete,
   setError,
   expandThis,
-  addBookmark
+  addBookmark,
 };

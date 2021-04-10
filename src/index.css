@@ -1,12 +1,12 @@
 body {
-  background-color: #D9D9D9;
-  color: #59564B;
+  background-color: #d9d9d9;
+  color: #59564b;
   margin: auto;
   padding: 10px 10px;
   padding-top: 25px;
   padding-bottom: 100px;
   text-align: center;
-  font-family: 'Baloo Chettan 2';
+  font-family: "Baloo Chettan 2";
   font-size: 18px;
   letter-spacing: 1.5px;
 }
@@ -14,12 +14,12 @@ body {
 main {
   text-align: center;
   display: flex;
-  font-family: 'Baloo Chettan 2';
+  font-family: "Baloo Chettan 2";
   letter-spacing: 1.5px;
   flex-direction: column;
-  border: 1px solid #B0A8B3;
+  border: 1px solid #b0a8b3;
   padding: 50px;
-  background-color: #EDEDED;
+  background-color: #ededed;
   border-radius: 20px;
 }
 
@@ -27,11 +27,13 @@ h1 {
   font-size: 24px;
 }
 
-#bookmark, .expand, .error-content {
+#bookmark,
+.expand,
+.error-content {
   font-size: 16px;
-  background-color: #F7F7F7;
+  background-color: #f7f7f7;
   border-radius: 20px;
-  border: 1px solid #B0A8B3;
+  border: 1px solid #b0a8b3;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -53,19 +55,22 @@ h1 {
   margin: 10px 0;
 }
 
-#enter-link, #enter-title, #input-description {
+#enter-link,
+#enter-title,
+#input-description {
   text-align: center;
   width: 42%;
   height: 25px;
   border-radius: 10px;
-  border: 1px solid #B0A8B3;
+  border: 1px solid #b0a8b3;
 }
 
-#filter, #rating {
+#filter,
+#rating {
   text-align: center;
   width: 20%;
   border-radius: 10px;
-  border: 1px solid #B0A8B3;
+  border: 1px solid #b0a8b3;
   height: 22px;
 }
 
@@ -73,13 +78,13 @@ button {
   padding: 16px;
   margin: 20px 5px;
   border-radius: 10px;
-  border: 1px solid #B0A8B3;
-  background-color: #F7F7F7;
+  border: 1px solid #b0a8b3;
+  background-color: #f7f7f7;
 }
 
 #new-button {
   width: 45%;
-  font: 'Baloo Chettan 2';
+  font: "Baloo Chettan 2";
   font-size: 14px;
 }
 
@@ -91,21 +96,22 @@ button {
   margin: 15px;
 }
 
-
-
-a:link    { color:#546E7A; }
-a:hover   { color: #FFC0CB; }
+a:link {
+  color: #546e7a;
+}
+a:hover {
+  color: #ffc0cb;
+}
 
 @media all and (min-width: 800px) {
-
   body {
-    background-color: #D9D9D9;
-    color: #59564B;
+    background-color: #d9d9d9;
+    color: #59564b;
     margin: auto;
     padding: 10px;
     padding-top: 100px;
     text-align: center;
-    font-family: 'Tenor Sans', sans-serif;
+    font-family: "Tenor Sans", sans-serif;
     font-size: 18px;
   }
 
@@ -113,38 +119,45 @@ a:hover   { color: #FFC0CB; }
     text-align: center;
     display: flex;
     flex-direction: column;
-    border: 1px solid #B0A8B3;
+    border: 1px solid #b0a8b3;
     padding: 50px;
-    background-color: #EDEDED;
+    background-color: #ededed;
     border-radius: 20px;
     width: 35%;
     margin: auto;
   }
 
-  button, .add-bookmark {
-    margin:auto;
+  button,
+  .add-bookmark {
+    margin: auto;
     margin-bottom: 8px;
-  } 
+  }
 
   .bookmark-item {
-    background-color: #F7F7F7;
+    background-color: #f7f7f7;
     width: 50%;
     margin: auto;
   }
-  
+
   .my-bookmarks-view {
     margin: 0px 100px;
   }
 
-  #enter-link, #enter-title, #input-description, #filter-filter, #filter {
+  #enter-link,
+  #enter-title,
+  #input-description,
+  #filter-filter,
+  #filter {
     width: 45%;
   }
 
   .ratings {
     margin-bottom: 10px;
   }
-  
-  #filter, .filter, #rating {
+
+  #filter,
+  .filter,
+  #rating {
     width: 12%;
   }
 }

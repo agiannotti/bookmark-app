@@ -1,8 +1,7 @@
-import store from './store';
+import store from "./store";
 
-
-const generateMain = function(htmlList) {
-  let listHtml = htmlList.map(array => generateBookmark(array));  
+const generateMain = function (htmlList) {
+  let listHtml = htmlList.map((array) => generateBookmark(array));
   return `
   <div id="buttons" class="buttons">
   <h1>Bookmark App</h1>
@@ -21,21 +20,19 @@ const generateMain = function(htmlList) {
   </div>
   <br>
   <div class="main-display" id="main-display">
-  ${listHtml.join('')}
+  ${listHtml.join("")}
   </div>`;
 };
 
 const generateBookmark = function (array) {
   if (array.rating >= store.STORE.filter) {
-    if(array.expanded === true){
+    if (array.expanded === true) {
       return expandedView(array);
     } else {
       return mainView(array);
     }
   }
 };
-
-
 
 const mainView = function (array) {
   return `
@@ -67,7 +64,7 @@ const expandedView = function (array) {
   </p>
   </div>
   <button class="delete-button" id="delete-button" data-bookmark-id=${array.id}> Delete</button>
-  `; 
+  `;
 };
 
 function addBookmark() {
@@ -106,9 +103,7 @@ function addBookmark() {
   </div>`;
 }
 
-
-
 export default {
   generateMain,
-  addBookmark
+  addBookmark,
 };
