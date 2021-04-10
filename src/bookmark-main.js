@@ -83,7 +83,11 @@ const handleSubmitAdd = function () {
 };
 
 const handleSubmitCancel = function () {
+<<<<<<< HEAD
   $(".cancel-button").on("click", function (e) {
+=======
+  $('.cancel-button').on('', function(e){
+>>>>>>> 61d1f59170aab49cffd03153aeb27bc11bbd4d8d
     e.preventDefault();
     store.STORE.adding = false;
     render();
@@ -91,9 +95,14 @@ const handleSubmitCancel = function () {
 };
 
 const handleFilter = function () {
+<<<<<<< HEAD
   $(".filter").on("change", function (event) {
     event.preventDefault();
     let filter = $("#filter option:selected").text();
+=======
+  $('.filter').on('change', function(){
+    let filter = $('#filter option:selected').val();
+>>>>>>> 61d1f59170aab49cffd03153aeb27bc11bbd4d8d
     store.STORE.filter = filter;
     render();
   });

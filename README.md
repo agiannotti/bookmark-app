@@ -1,10 +1,13 @@
-# Bookmark App
-[Live Github](https://okaysame.github.io/bookmark-app/dist/ "Live Page")  
+# Bookmarked
+[Live Deployment](https://agiannotti.github.io/bookmark-app/dist/)  
+
   
-Demonstrates functionality of adding, removing, and editing bookmarks utilizing an API and a local database. 
+Demonstrates functionality of adding and removing bookmarks utilizing an API and a local database. 
+
 ## Installation
 ```
 npm install
+npm start
 ```
 ## User stories
 
@@ -30,4 +33,5 @@ User can add bookmarks to bookmark list. Bookmarks contain:
 •  Check all validations in the API documentation (e.g. title and url field required).  
 
 •  User can select from a dropdown (a <select> element) a "minimum rating" to filter the list by all bookmarks rated at or above the chosen selection.
+
 
