@@ -8,17 +8,15 @@ const generateMain = function (htmlList) {
   <div class="add-bookmark">
   <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
   </div>
-  <label value="filter">Filter By Rating
+  <label for="filter">Sort By Rating</label>
   <br>
   <select name="filter" id="filter" class="filter">
-  <option>Filter</option>
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="5">5</option>
+  <option value="1" selected="selected">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3" selected="selected">3</option>
+  <option value="4" selected="selected">4</option>
+  <option value="5" selected="selected">5</option>
   </select>
-  </label>
   </div>
   <br>
   <div class="main-display" id="main-display">
@@ -74,34 +72,30 @@ function addBookmark() {
   <div class="add-bookmark">
   <h1>Add Bookmark</div>
   <form class="form-add">
-  <label>URL
+  <label for="url">URL</label>
   <br>
-  <input type="text" name="url" id="enter-link" required />
-  </label>
+  <input type="text" name="url" id="enter-link" placeholder="URL"required />
   <br>
-  <label>Title
+  <label for="title">Title</label>
   <br>
-  <input type="text" name="title" id="enter-title" required />
+  <input type="text" name="title" id="enter-title" placeholder="Title" required />
   <br>
-  </label>
-  <label>Description
+  <label for="desc">Description</label>
   <br>
-  <input type="text" name="desc" id="input-description" />
+  <input type="text" name="desc" id="input-description" placeholder="Description" />
   <br>
-  </label>
-  <label>Rating:
+  <label for="rating">Rating:</label>
   <br>
   <select name="rating" id="rating">
-  <option value="1" >1</option>
-  <option value="2" >2</option>
-  <option value="3" >3</option>
-  <option value="4" >4</option>
-  <option value="5" >5</option>
+  <option value="1" selected="selected">1</option>
+  <option value="2" selected="selected">2</option>
+  <option value="3" selected="selected">3</option>
+  <option value="4" selected="selected">4</option>
+  <option value="5" selected="selected">5</option>
   </select>
-  </label>
   <div class="error-message"></div>
   </div>
-  <div class="save-and-cancel">
+  <div>
   <button type="submit" class="submit-form">Save</button>
   <button type-"submit" class="cancel-button">Cancel</button>
   </div>

@@ -154,20 +154,10 @@ a:hover {
   .ratings {
     margin-bottom: 10px;
   }
-<<<<<<< HEAD
 
   #filter,
   .filter,
   #rating {
     width: 12%;
-=======
-  
-  #filter, .filter, #rating {
-    width: 18%;
-  }
-
-  .save-and-cancel {
-    margin-top: 10px;
->>>>>>> 61d1f59170aab49cffd03153aeb27bc11bbd4d8d
   }
 }
