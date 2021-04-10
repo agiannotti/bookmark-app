@@ -56,7 +56,7 @@ const expandedView = function (array) {
   </button> </div>
   <div class="panel">
   <div class="drop-down-button">
-  <a href="https://www.google.com" target="new_blank">https://www.google.com</a>
+  <a href="${array.url}" target="new_blank">${array.url}</a>
   <br>
   </div>
   <p id='drop-down-text'>
